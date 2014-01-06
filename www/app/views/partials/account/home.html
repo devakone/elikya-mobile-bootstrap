@@ -1,0 +1,54 @@
+<alert ng-repeat="alert in alerts" type="alert.type">{{alert.msg}}</alert>  
+<div class="alert alert-warning" ng-show="!paymentMethodSelected">
+	<p>We've noticed you haven't set up a way to send and receive money yet! Elikya uses Dwolla for transactions. Signing up for Dwolla is easy:
+	<div class="btn-group">
+    	<a class="btn btn-info" ui-sref="account.dwolla.start">Create a Dwolla Account</a>
+	</div>
+</div>
+	
+<div ng-show="!user.vestings ||user.vestings.length == 0">
+	<h3>No Vestings</h3>
+	<p>You currently have no vestings that either you created or that you were invited to participate in. Would you like to:</p>
+	<hr/>
+	<div class="btn-toolbar">
+		<div class="btn-group">
+	    	<a class="btn btn-primary" ui-sref="vestings.create">Create a Vesting</a>
+	    	<a class="btn btn-primary" >Join a Vesting</a>	
+		</div>
+	</div>
+	
+</div>
+<div ng-show="user.vestings.length > 0">
+	<h3 class='text-center'>Summary</h3>
+	<table class="table">
+	  <tr class="info">
+	  	<td>Harvests to Date:</td>
+	  	<td>{{harvestsToDate}}</td>
+	  </tr>
+	</table>
+	
+	<h3 class='text-center'>Seeds</h3>
+	<table class="table">
+	  	<tr class="info">
+	  		<td>Next Seeding Due Date:</td>
+	  		<td>{{nextSeeding.dueDate}}</td>
+	 	</tr>
+	 	<tr class="info">
+	   		<td>Seed Amount:</td>
+	  		<td>${{nextSeeding.amount | currency}}
+	  		</td>
+	 	</tr>
+	</table>
+	
+	<h3 class='text-center'>Harvests</h3>
+	<table class="table">
+	  	<tr class="info">
+		  	<td>Harvest Date</td>
+		  	<td>{{nextHarvest.harvestDate}}</td>
+	  	</tr>
+	 	 <tr class="info">
+		   	<td>Amount:</td>
+		   	<td>${{nextHarvest.amount | currency}}</td>
+		 </tr>
+	</table>
+</div>

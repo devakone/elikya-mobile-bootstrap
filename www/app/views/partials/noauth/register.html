@@ -1,0 +1,33 @@
+<div id="registerPage" class="well">
+    <div  class="page-header">
+        <h3>Create an account with Elikya</h3>
+    </div>
+    <div>
+        <alert ng-repeat="alert in alerts" type="alert.type">{{alert.msg}}</alert>
+        <form novalidate  role="form"ng-submit="register()" name="registerForm">
+            <div class="form-group" ng-class="{'has-error':(!registerForm.email.$valid && registerForm.email.$dirty )}">
+                <!-- <label class="control-label" for="email">Email:</label> -->
+                <input type="email" placeholder="your@email.address" class=" form-control input-xlg" ng-model="user.email" id="email" name="email"/>
+                 <span class="text-danger" ng-show="registerForm.email.$error.email && registerForm.email.$dirty"><span class="label label-danger">Error</span>&nbsp;Please enter a valid email address.</span>
+            </div>
+            <div class="form-group">
+                <!-- <label class="control-label" for="registerPage_password">Password:</label> -->             
+                <input type="password" class="form-control input-xlg" ng-model="user.password" id="password" name="password" placeholder="Password">
+         
+            </div>
+            <div class="form-group" ng-class="{'has-error':(!registerForm.verifyPassword.$valid && registerForm.verifyPassword.$dirty )}">
+                <!-- <label class="control-label" for="registerPage_password">Confirm Your Password:</label> -->
+                    <input type="password" class="form-control input-xlg" ng-model="user.verifyPassword" id="verifyPassword" name="verifyPassword" ui-validate=" '$value==user.password' " ui-validate-watch="'user.password'" placeholder="Confirm your password">
+                    <span class="text-danger" ng-show="registerForm.verifyPassword.$error.validator && registerForm.verifyPassword.$dirty"><span class="label label-danger">Error</span>&nbsp;Your passwords do not match!</span>
+            </div>
+            <div class="form-actions">
+                <div>
+                    <button type="submit" class="btn btn-large btn-primary clearfix" value="register" ng-disabled="!registerReady()">Register</button>
+                </div>
+                <div class="abutton"><a href="" class="btn btn-large btn-secondary clearfix" ng-click="viewTutorialPage()">Tutorial </a></div>
+                <div class="abutton"><a href="" class="btn btn-large btn-secondary clearfix" ng-click="viewFaqPage()">FAQ </a></div>
+            </div>
+        </form>
+        <p>
+    </div>
+</div>

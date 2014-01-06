@@ -1,0 +1,96 @@
+<div class="modal-header text-center" ng-show="wizard.showSteps">
+	<div class="btn-group ">
+	    <button class="btn" ng-show="showVerifyDialog==true">Start</button>
+	    <button class="btn" ng-class="{'btn-primary':wizard.isCurrentStep(1)}" ng-click="wizard.setCurrentStep(1)">General</button>
+	    <button class="btn" ng-class="{'btn-primary':wizard.isCurrentStep(2)}" ng-click="wizard.setCurrentStep(2)">Address</button>
+	    <button class="btn" ng-class="{'btn-primary':wizard.isCurrentStep(3)}" ng-click="wizard.setCurrentStep(3)">Phone</button>
+	    <button class="btn" ng-show="showVerifyDialog==true">Finish</button>
+	    
+	</div>
+</div>
+<div class="modal-body">
+	<div ng-switch="wizard.getCurrentStep()" ng-animate="'wave'" class="slide-frame">
+		<form novalidate >
+		   
+		    <div ng-switch-when="one">
+		       <h3 class='text-center'>Create a Vesting</h3>
+		       <fieldset> 
+		        <legend>General Vesting Information</legend> 
+					<div class="control-group">  
+						<label class="control-label" for="name">Vesting Name ()</label><span class="note">A name to help you and your friends remember this vesting</span>  
+						<div class="controls">  
+							<input type="text" class="input-xlarge" id="name" ng-model="vesting.name">  
+						</div>  
+					</div>
+					<div class="control-group">  
+						<label class="control-label" for="lastName">Seed</label>  
+						<div class="controls">
+							<input type="text" class="input-mini" id="seed" ng-model="vesting.seed">  
+						</div>  
+					</div> 
+					<div class="control-group">  
+						<div class="controls">  
+							<label class="control-label" for="dob"> Date of Birth </label>
+							<div class="controls input-append">
+							  <input type="text" ng-model="userProfile.dob" class="input-small" data-date-format="mm/dd/yyyy" bs-datepicker>
+							  <button type="button" class="btn" data-toggle="datepicker"><i class="icon-calendar"></i></button>
+							</div>
+							<input type="hidden" class="input-xlarge" id="uuid" ng-model="userProfile._user"> 
+						</div>  
+					</div>  
+				</fieldset>  
+		    </div>
+		    <div ng-switch-when="two">
+		        <h3 class='text-center'>Address</h3>
+		        <p> We do not accept PO boxes.
+		        <fieldset>  
+					<div class="control-group">  
+						<label class="control-label" for="address">Address 1</label>  
+						<div class="controls">  
+							<input type="text" class="input-xlarge" id="address" ng-model="userProfile.address">  
+						</div>  
+					</div>
+					<div class="control-group">  
+						<label class="control-label" for="address2">Address 2</label>  
+						<div class="controls">
+							<input type="text" class="input-xlarge" id="address2" ng-model="userProfile.address2">  
+						</div>  
+					</div> 
+					<div class="control-group">  
+						<div class="controls">  
+							<label class="control-label" for="city"> City </label>
+							<div class="controls">
+								<input type="text" class="input-xlarge" id="city" ng-model="userProfile.city">  
+							</div>   						
+						</div>  
+					</div>
+					<div class="control-group">  
+						<div class="controls">  
+							<label class="control-label" for="state"> State </label>
+							<div class="controls">
+								<input type="text" class="input-xlarge" id="state" ng-model="userProfile.state">  
+							</div>   						
+						</div>  
+					</div>
+					<div class="control-group">  
+						<div class="controls">  
+							<label class="control-label" for="zip"> Zip Code </label>
+							<div class="controls">
+								<input type="text" class="input-xlarge" id="zip" ng-model="userProfile.zip">  
+							</div>   						
+						</div>  
+					</div>        
+				</fieldset>  
+		    </div>
+		   
+	    </form>	  
+	</div>
+</div>
+<div class="modal-footer text-center">
+	<div>
+		<a class="btn" ng-click="wizard.handlePrevious()" ng-show="!wizard.isFirstStep()">Back</a>
+		<a class="btn btn-primary" ng-click="wizard.handleNext(wizard.dismiss)">{{wizard.getNextLabel()}}</a>
+	</div>
+</div>
+
+

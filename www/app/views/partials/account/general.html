@@ -1,0 +1,29 @@
+<div class="span12 " id="infos">
+    <div ng-switch-when="two">
+       <h3 class='text-center'>General Information</h3>
+       <fieldset>  
+            <div class="control-group">  
+                <label class="control-label" for="firstName">First Name</label>  
+                <div class="controls">  
+                    <input type="text" class="input-xlarge" id="firstName" ng-model="userProfile.firstName">  
+                </div>  
+            </div>
+            <div class="control-group">  
+                <label class="control-label" for="lastName">Last Name</label>  
+                <div class="controls">
+                    <input type="text" class="input-xlarge" id="lastName" ng-model="userProfile.lastName">  
+                </div>  
+            </div> 
+            <div class="control-group">  
+                <div class="controls">  
+                    <label class="control-label" for="dob"> </label>
+                    <div class="controls input-append">
+                      <input type="text" ng-model="userProfile.dob" data-date-format="mm/dd/yyyy" bs-datepicker>
+                      <button type="button" class="btn" data-toggle="datepicker"><i class="icon-calendar"></i></button>
+                    </div>
+                    <input type="hidden" class="input-xlarge" id="uuid" ng-model="userProfile._user"> 
+                </div>  
+            </div>  
+        </fieldset>  
+    </div>
+</div>

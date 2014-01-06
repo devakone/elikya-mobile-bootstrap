@@ -1,0 +1,14 @@
+{
+  "name": "later",
+  "main": "./later.js",
+  "homepage": "https://github.com/bunkat/later",
+  "_release": "db10d0f048",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "db10d0f048bbcdf8e77bfffbf2589f055c615e96"
+  },
+  "_source": "git://github.com/bunkat/later.git",
+  "_target": "*",
+  "_originalSource": "later"
+}

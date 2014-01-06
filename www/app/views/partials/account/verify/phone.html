@@ -1,0 +1,44 @@
+
+<form novalidate name="phoneVerificationForm" class="row">
+
+	<h3 class='text-center'>Phone Number</h3>
+    <p>We require a valid phone number on file for your account. This allows other users to send you money using this phone number. You will receive a
+    SMS message with a valid code to enter.
+    <fieldset>
+    	<alert ng-repeat="alert in alerts" type="alert.type">{{alert.msg}}</alert>  
+		<div class="form-group">  
+
+			<label class="control-label" for="phoneNumber">Phone Number</label>  
+			<div class="row"> 
+				<div class="controls col-xs-7">  
+					<input type="text" required class="form-control input-lg" id="phoneNumber" name="phoneNumber" ng-model="profile.phone_number"> 
+				</div>
+				<div class="controls col-xs-5">  
+					<button ng-disabled="phoneVerificationForm.phoneNumber.$error.required" class="btn btn-primary input-lg"  ng-click="getSmsVerificationCode(phoneVerificationForm)">Get SMS</button>
+				</div>
+			</div>
+			<span class="text-info" ng-show="showVerificationCodeInput">A SMS verification code has been sent to your phone. </span>  
+			<span class="text-danger" ng-show="(phoneVerificationForm.phoneNumber.$error.required && phoneVerificationForm.phoneNumber.$dirty) || (phoneVerificationForm.phoneNumber.$error.required && submitting)">Please provide a valid phone number</span>
+			<span class="text-danger" ng-show="(phoneVerificationForm.phoneNumber.$error.smssent) || (phoneVerificationForm.phoneNumber.$error.smssent && submitting)">You need to verify your phone number. Use the "Get Code" button to get a SMS verification code sent to you.</span>    
+		</div>
+		<div class="form-group" ng-show="showVerificationCodeInput">  
+			<label class="control-label" for="phoneVerified">Please enter the verification code you received</label> 
+			<div class="row"> 
+				<div class="controls col-sm-7"> 
+					<input type="text" class="form-control input-lg" id="userVerificationCode" name="userVerificationCode" ng-model="profile.smsVerificationCode" ng-blur="validateVerificationCode(phoneVerificationForm)">
+					<input type="hidden"  id="smsVerificationCode" ng-model="smsVerificationCode">  
+					<span class="text-danger" ng-show="(phoneVerificationForm.userVerificationCode.$error.verify ) || (phoneVerificationForm.userVerificationCode.$error.verify && submitting)">The verification code you provided is invalid! Verify that the code entered is correct, or try getting a new code.</span> 
+				</div>
+
+			</div> 
+		</div> 
+		   
+	</fieldset>  
+	
+</form>
+<div class="text-center">
+	<div>
+		<button class="btn btn-lg" ng-show="showBackButton" ng-click="back()">{{backButtonLabel}}</button>
+		<button class="btn btn-primary btn-lg" ng-click="next(phoneVerificationForm)">{{nextButtonLabel}}</button>
+	</div>
+</div>

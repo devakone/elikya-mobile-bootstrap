@@ -1,0 +1,46 @@
+<div class="well well-elk" id="login">
+    <div  class="page-header">
+        <h3>Login to your account</h3>
+    </div>
+    <div>
+        <alert ng-repeat="alert in alerts" type="alert.type">{{alert.msg}}</alert>
+        <form novalidate role="form" ng-submit="login()" name="loginForm">
+
+            <div class="form-group" ng-class="{'has-error':(submitted && !loginForm.email.$valid)}">
+                <!-- <label class="control-label" for="email">Email:</label> -->
+                <input type="email" class="form-control input-lg" ng-model="auth.email" id="email" name="email" placeholder="your@email.address">
+                <span class="text-danger" ng-show="submitted && loginForm.email.$error.email"><span class="label label-danger">Error</span>&nbsp;Enter your email</span>
+            
+            </div>
+            <div class="control-group" ng-class="{'has-error':submitted && loginForm.password.$error.required}">
+                <!-- <label class="control-label" for="password">Password:</label> -->
+                <div class="controls">
+                    <input type="password" class="form-control input-lg" ng-model="auth.password" id="password" name="password" placeholder="Password">
+                    <span class="text-danger" ng-show="submitted && loginForm.password.$error.required"><span class="label label-danger">Error</span>&nbsp;Enter your password</span>
+                </div>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" ng-model="auth.rememberMe" value="">
+                Remember Me
+              </label>
+            </div>
+            <div class="form-actions">
+                <div class="controls">
+                <div> 
+                    <button class="btn btn-lg btn-primary" ng-click="submitted=true" value="Login" ng-disabled="!loginReady()">Login</button>
+                </div>
+                <div>
+                    <a class="btn btn-link" ui-sref="noauth.forgotPassword">I forgot my password!</a>
+                </div>
+                <div class="abutton">
+                    <a ui-sref="noauth.register" class="btn btn-large btn-secondary clearfix">Sign up!</a>
+                </div>
+
+                   
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>

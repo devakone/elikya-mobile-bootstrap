@@ -1,0 +1,111 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Elikya: Empower Yourself!</title>
+    <base href="/index.html">
+    <meta name="description" content="Elykia, empowering user financially">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- build:css({.tmp,app}) styles/main.css -->
+    <link rel="stylesheet" href="styles/bootstrap.css"> 
+    <link rel="stylesheet" href="styles/bootstrap-theme.css"> 
+    <link rel="stylesheet" href="styles/angular-ui.css"> 
+    <link rel="stylesheet" href="bower_components/pickadate/lib/compressed/themes/default.css">
+    <link rel="stylesheet" href="bower_components/pickadate/lib/compressed/themes/default.date.css">
+    <link rel="stylesheet" href="bower_components/pickadate/lib/compressed/themes/default.time.css">
+    <link rel="stylesheet" href="styles/angular-snap.min.css">
+    <link rel="stylesheet" href="styles/main.css"> 
+    <!--  <link rel="stylesheet" href="styles/jquery.mobile.css" type="text/css"> -->  
+    <!-- endbuild -->
+</head>
+  <body ng-app="elikyaMobileApp" >
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+    <![endif]-->
+
+    <!--[if lt IE 9]>
+      <script src="bower_components/es5-shim/es5-shim.js"></script>
+      <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+    
+   
+
+    <!-- Add your site or application content here -->
+    <div id="appContent"  class="container"  >
+		<div class="row" ui-view>
+        </div>
+    </div>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src='//www.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+	<script src="bower_components/jquery/jquery.js"></script>
+	<script src="bower_components/snapjs/snap.min.js"></script>
+	<script src="scripts/vendor/URI.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/underscore/underscore-min.js"></script>
+
+    <script src="bower_components/angular-ui/build/angular-ui.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-snap/angular-snap.js"></script>
+    <script src="bower_components/momentjs/moment.js"></script>
+    <script src="bower_components/pickadate/lib/compressed/legacy.js"></script>
+    <script src="bower_components/pickadate/lib/compressed/picker.js"></script>
+    <script src="bower_components/pickadate/lib/compressed/picker.date.js"></script>
+    <script src="bower_components/pickadate/lib/compressed/picker.time.js"></script>
+    <script src="bower_components/angularLocalStorage/src/angularLocalStorage.js"></script>
+
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/modules/underscore.js"></script>
+    <script src="scripts/config.js"></script>
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js scripts/plugins.js -->
+   
+  
+   
+    <!-- endbuild -->
+
+    <!-- build:js scripts/modules.js -->
+
+    <script src="scripts/services/token-handler.js"></script>
+    <script src="scripts/services/auth-service.js"></script>
+    <script src="scripts/services/user-service.js"></script>
+     <script src="scripts/services/user-profile-service.js"></script>
+    <script src="scripts/services/cordova-ready.js"></script>
+    <script src="scripts/services/geolocation.js"></script>
+    <script src="scripts/controllers/authentication.js"></script>
+    <script src="scripts/controllers/community.js"></script>
+    <script src="scripts/controllers/account.js"></script>
+    <script src="scripts/controllers/vesting.js"></script>
+    <script src="scripts/directives/back-button.js"></script>
+    <script src="scripts/services/global.js"></script>
+    <script src="scripts/directives/pickadate.js"></script>
+    <script src="scripts/controllers/verification.js"></script>
+    <script src="scripts/directives/us-states.js"></script>
+    <script src="scripts/services/verification-service.js"></script>
+    <script src="scripts/services/alert-service.js"></script>
+    <script src="scripts/directives/verify.js"></script>
+
+    <script src="scripts/controllers/dwolla.js"></script>
+    <!-- endbuild -->
+</body>
+</html>

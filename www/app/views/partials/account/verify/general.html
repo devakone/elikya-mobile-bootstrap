@@ -1,0 +1,42 @@
+<form novalidate name="generalVerificationForm" role="form">
+	<fieldset> 
+    	<legend>General Information</legend> 
+    	<div class="form-group"  ng-class="{'has-error':( generalVerificationForm.userName.$invalid && submitting)}">  
+			<label class="control-label" for="userName">Username</label>   
+			<input type="text" required class="form-control input-lg" id="userName" ng-model="profile.username" name="userName"> 
+			<span class="text-danger" ng-show="(generalVerificationForm.userName.$error.required && generalVerificationForm.userName.$dirty) || (generalVerificationForm.userName.$error.required && submitting)">Please provide a username.</span> 
+			
+		</div>
+		<span class="help-block">Your username will be used to identify you in your vestings.</span>
+
+		<div class="form-group" ng-class="{'has-error': generalVerificationForm.firstName.$invalid && submitting}">  
+			<label class="control-label" for="firstName">First Name</label>  
+			<div class="controls">  
+				<input type="text" required class="form-control input-lg" id="firstName"  name="firstName" ng-model="profile.first_name">  
+				<span class="text-danger" ng-show="(generalVerificationForm.firstName.$error.required && generalVerificationForm.firstName.$dirty) || (generalVerificationForm.firstName.$error.required && submitting) ">Please provide your first name.</span> 
+			</div>  
+		</div>
+		<div class="form-group">  
+			<label class="control-label" for="minitial">M.I</label> 
+			<div class="row"> 
+				<div class="controls col-xs-4">  
+					<input type="text"  class="form-control " id="minitial"  name="minitial" ng-model="profile.middle_initial" maxlength="1">
+				</div>			
+			</div>  
+			<span class="help-block">If you have one, please provide your middle initial</span>  	
+		</div>
+		<div class="form-group" ng-class="{'has-error':( generalVerificationForm.lastName.$invalid && submitting)}">  
+			<label class="control-label" for="lastName">Last Name</label>  
+			<div class="controls">
+				<input type="text" required class="form-control input-lg" id="lastName" name="lastName" ng-model="profile.last_name"> 
+				<span class="text-danger" ng-show="(generalVerificationForm.lastName.$error.required && generalVerificationForm.lastName.$dirty)||(generalVerificationForm.lastName.$error.required && submitting)">Please provide your last name</span>  
+			</div>  
+		</div> 
+	</fieldset>  
+</form>
+<div>
+	<div>
+		<button class="btn btn-lg" ng-show="showBackButton" ng-click="back()">{{backButtonLabel}}</button>
+		<button class="btn btn-primary btn-lg" ng-click="next(generalVerificationForm)">{{nextButtonLabel}}</button>
+	</div>
+</div>

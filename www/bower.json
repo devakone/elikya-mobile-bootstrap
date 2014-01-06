@@ -1,0 +1,33 @@
+{
+  "name": "elikyaMobile",
+  "version": "0.0.1",
+  "dependencies": {
+    "json3": "latest",
+    "jquery": "latest",
+    "bootstrap-sass": "latest",
+    "es5-shim": "latest",
+    "angular": "latest",
+    "angular-resource": "latest",
+    "angular-cookies": "latest",
+    "angular-sanitize": "latest",
+    "angular-bootstrap": "latest",
+    "angular-touch": "latest",
+    "angular-ui": "latest",
+    "angular-ui-router": "latest",
+    "later": "latest",
+    "angular-snap": "~0.2.0",
+    "snapjs": "*",
+    "momentjs": "~2.3.0",
+    "pickadate": "~3.3.0",
+    "angularLocalStorage": "~0.1.7",
+    "underscore": "latest"
+  },
+  "devDependencies": {
+    "angular-mocks": "latest",
+    "angular-scenario": "latest"
+  },
+  "resolutions": {
+    "angular": "1.2.7",
+    "bootstrap": ">=3.0 <4.0"
+  }
+}
