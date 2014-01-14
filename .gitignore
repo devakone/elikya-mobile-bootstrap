@@ -27,6 +27,7 @@ gen/
 local.properties
 
 # IOS / Xcode
+console.log
 platforms/ios/build/*
 *.pbxuser
 !default.pbxuser
