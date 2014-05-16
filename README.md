@@ -2,8 +2,8 @@ Elikyamobile
 ============
 
 Mobile version of Elikya based on AngularJS
-This project consists of a Cordova 2.9 application which wraps an AngularJS webview.
-It interfaces with an ExpressJS API that can be downloaded at https://github.com/devakone/elikya_express
+This project consists of a Cordova 2.9 application which wraps an AngularJS webview. This is deprecated in favor of https://github.com/devakone/elikya_ionic.
+It interfaces with an ExpressJS API that can be downloaded at https://github.com/devakone/elikya_api
 
 The AngularJS code is in the the assets folder. This code is managed using Yeoman.
 If you need to add new libraries make sure to use Bower so the dependencies are properly managed.
